@@ -280,13 +280,13 @@ function fishStatsDisplay() {
   let numStars = currentFish.rarity;
   for (let i = 0; i < numStars; i++) {
     push();
-    translate(textpadding.maxw - i * 100, textpadding.minh);
+    translate(textpadding.maxw - i * 80, textpadding.minh);
     stroke("orange");
     strokeWeight(10);
     fill("yellow");
     rotate(frameCount / -100.0 + i * 5);
     scale(1 - i * 0.06);
-    star(0, 0, 30, 70, 5);
+    star(0, 0, 20, 40, 5);
     pop();
   }
 }

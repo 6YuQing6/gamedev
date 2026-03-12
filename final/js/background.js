@@ -35,7 +35,7 @@ class BackgroundScene {
       this.mountainGraphics,
       this.pixelMountainGraphics,
       colors,
-      5
+      5,
     );
     this.cloudGraphic = createGraphics(this.width, this.height);
     this.cloudOffsetX = 0;
@@ -206,7 +206,7 @@ class BackgroundScene {
     this.cloudGraphic.fill(255, 255, 255, 50);
 
     const layers = [
-      { scale: 0.004, alpha: 50, offsetMult: 0.5, size: 25 },
+      { scale: 0.004, alpha: 100, offsetMult: 0.5, size: 25 },
       { scale: 0.006, alpha: 100, offsetMult: 1.5, size: 18 },
     ];
 
@@ -215,7 +215,7 @@ class BackgroundScene {
         for (let x = 0; x < this.width; x += 10) {
           let n = noise(
             (x + this.cloudOffsetX * layer.offsetMult) * layer.scale,
-            (y + random()) * layer.scale
+            (y + random()) * layer.scale,
           );
           if (n > 0.5) {
             this.cloudGraphic.fill(255, 255, 255, layer.alpha);

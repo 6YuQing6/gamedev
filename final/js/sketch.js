@@ -6,7 +6,7 @@ let bezx = [];
 let bezy = [];
 let castProgress = 0;
 
-const w = 1200;
+const w = screen.width - 400;
 const h = 600;
 const h2 = 600;
 
@@ -76,9 +76,9 @@ function setup() {
 
   //   createSceneObjectsTemp();
   fishParams = {
-    maxWidth: w / 1.5,
+    maxWidth: w / 2,
     minWidth: w / 4,
-    maxHeight: w / 1.5,
+    maxHeight: w / 2,
     minHeight: w / 6,
   };
   // https://editor.p5js.org/chanc245_chrissy/sketches/38M4tNTKd
@@ -145,8 +145,10 @@ function draw() {
     rod.updatePos(posX);
   }
 
-  //drawAcquariumFish();
+  tint(255, 50); // second value is alpha: 0 (invisible) to 255 (fully opaque)
   image(glassOverlay, 0, h + 20);
+  noTint(); // reset so other images aren't affected
+
   mouseHover();
   if (currentFish) {
     fishStatsDisplay();
@@ -263,7 +265,7 @@ function fishStatsDisplay() {
     textpadding.minw,
     textpadding.minh,
     textpadding.maxw,
-    textpadding.maxh
+    textpadding.maxh,
   );
   textSize(26);
   textFont(BPdots);
@@ -272,7 +274,7 @@ function fishStatsDisplay() {
     textpadding.minw,
     textpadding.minh + 50,
     textpadding.maxw,
-    textpadding.maxh
+    textpadding.maxh,
   );
 
   let numStars = currentFish.rarity;
@@ -399,7 +401,7 @@ function loadGameState() {
     try {
       fishArray.forEach((fishData) => {
         fishes.push(
-          new Fish(fishData.seed, fishData.name, fishData.description)
+          new Fish(fishData.seed, fishData.name, fishData.description),
         );
       });
     } catch (error) {

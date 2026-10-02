@@ -1,20 +1,45 @@
 @import url("./navigation.css");
 
+:root {
+  --text: #000;
+  --text-secondary: #405168;
+  --background: #fff;
+  --background-muted: #f9fafb;
+  --background-button: #eff2f6;
+  --accent: #1da1f2;
+
+  --font: InterVariable, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Liberation Sans", Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 h1,
 h2 {
   margin: 0;
   padding: 0;
   /* font-size: 1.2em; */
   font-weight: 1em;
-  color: #6380ff;
+  color: var(--accent);
 }
 
 p {
-  color: #000728;
+  color: var(--text);
 }
 
 body {
-  background-color: rgb(238, 247, 253);
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--background);
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis-weight: none;
 }
 
 #content {
@@ -29,7 +54,7 @@ body {
 .minor-section {
   margin: 10px;
   padding: 10px;
-  border: solid 2px #6380ff;
+  border: solid 2px var(--accent);
   border-radius: 10px;
   background-color: white;
 }
@@ -44,6 +69,7 @@ body {
   width: 100%;
   height: auto;
   padding: 0;
+
   img {
     border-radius: 10px;
   }
@@ -57,7 +83,8 @@ canvas {
 
 .fullscreen-box {
   display: flex;
-  justify-content: flex-end; /* Aligns the button to the right */
+  justify-content: flex-end;
+  /* Aligns the button to the right */
   margin-top: 0.25em;
 }
 
@@ -66,11 +93,15 @@ canvas {
 }
 
 body.is-fullscreen #canvas-container {
-  position: fixed; /* Use 'fixed' instead of 'absolute' to ensure it covers the entire screen */
+  position: fixed;
+  /* Use 'fixed' instead of 'absolute' to ensure it covers the entire screen */
   top: 0;
-  left: 0; /* Add 'left: 0' to align it properly to the top-left corner */
+  left: 0;
+  /* Add 'left: 0' to align it properly to the top-left corner */
   width: 100vw !important;
   height: 100vh !important;
-  margin: 0; /* Remove any default margins */
-  z-index: 1000; /* Ensure it's above other content */
+  margin: 0;
+  /* Remove any default margins */
+  z-index: 1000;
+  /* Ensure it's above other content */
 }

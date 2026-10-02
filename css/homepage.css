@@ -157,3 +157,67 @@
   overflow-wrap: anywhere;
   white-space: pre-line;
 }
+
+/* Tabs */
+:root {
+  --border: #dce2ea;
+}
+
+.tabs-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: var(--background);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 10px 8px 0;          /* estimated */
+  border: 0;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.tab-label {
+  position: relative;
+  padding-bottom: 13px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.tab[aria-selected="true"] .tab-label {
+  color: var(--text);
+}
+
+/* underline indicator, sized to the label text */
+.tab[aria-selected="true"] .tab-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;                  /* estimated */
+  border-radius: 3px 3px 0 0;
+  background: var(--accent);
+}
+
+.tab:hover .tab-label {
+  color: var(--text);
+}
+
+.tab-panel[hidden] {
+  display: none;
+}

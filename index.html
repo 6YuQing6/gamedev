@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <!-- This title is used for tabs and bookmarks -->
@@ -24,14 +24,22 @@
           <div class="profile-banner" aria-hidden="true"></div>
 
           <div class="profile-avatar">
-            <img src="./img/header.jpeg" alt="Sunny's profile photo" />
+            <img src="./img/profile-avatar.jpeg" alt="Sunny's profile photo" />
           </div>
 
           <div class="profile-body">
             <div class="profile-actions">
               <a class="btn btn-primary" href="mailto:sunnyhan724@gmail.com">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 3a1 1 0 0 1 1 1v7h7a1 1 0 1 1 0 2h-7v7a1 1 0 1 1-2 0v-7H4a1 1 0 1 1 0-2h7V4a1 1 0 0 1 1-1Z"/>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3a1 1 0 0 1 1 1v7h7a1 1 0 1 1 0 2h-7v7a1 1 0 1 1-2 0v-7H4a1 1 0 1 1 0-2h7V4a1 1 0 0 1 1-1Z"
+                  />
                 </svg>
                 Contact Me
               </a>
@@ -51,33 +59,76 @@
             <div class="profile-identity">
               <h1 class="profile-name">Sunny Han</h1>
               <div class="profile-handle">
-                <a href="https://github.com/6YuQing6" target="_blank" rel="noopener noreferrer">@6YuQing6</a>
+                <a
+                  href="https://github.com/6YuQing6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >@6YuQing6</a
+                >
               </div>
             </div>
 
-            <!-- <div class="profile-stats">
+            <div class="profile-stats">
               <a href="#projects"><strong>9</strong> <span>projects</span></a>
-              <a href="#projects"><strong>8</strong> <span>experiments</span></a>
-              <div><strong>1</strong> <span>final game</span></div>
-            </div> -->
+              <a href="#projects"
+                ><strong>8</strong> <span>experiments</span></a
+              >
+              <div><strong>1</strong> <span>game</span></div>
+            </div>
 
-            <p class="profile-bio" >Computer science: Game design (UCSC). Aspiring software developer, game jam enthusiast, digital art hobbyist.
-
-            "Change is freedom, change is life" - Ursula K. Le Guin </p>
+            <p class="profile-bio">🌱 Computer science: game design (UCSC). Aspiring software developer, game jam enthusiast, digital art hobbyist.
+              
+              "Change is freedom, change is life" - Ursula K. Le Guin</p>
           </div>
         </header>
         <div class="tabs-sticky" id="projects">
           <div class="tabs" role="tablist" aria-label="Portfolio projects">
-            <button class="tab" id="tab-experiments" role="tab" type="button" data-tab="experiments" aria-selected="true" aria-controls="panel-experiments" tabindex="0">
+            <button
+              class="tab"
+              id="tab-experiments"
+              role="tab"
+              type="button"
+              data-tab="experiments"
+              aria-selected="true"
+              aria-controls="panel-experiments"
+              tabindex="0"
+            >
               <span class="tab-label">Experiments</span>
             </button>
-            <button class="tab" id="tab-games" role="tab" type="button" data-tab="games" aria-selected="false" aria-controls="panel-games" tabindex="-1">
+            <button
+              class="tab"
+              id="tab-games"
+              role="tab"
+              type="button"
+              data-tab="games"
+              aria-selected="false"
+              aria-controls="panel-games"
+              tabindex="1"
+            >
               <span class="tab-label">Games</span>
+            </button>
+            <button
+              class="tab"
+              id="tab-photos"
+              role="tab"
+              type="button"
+              data-tab="photos"
+              aria-selected="false"
+              aria-controls="panel-photos"
+              tabindex="-1"
+            >
+              <span class="tab-label">Media</span>
             </button>
           </div>
         </div>
 
-        <section class="tab-panel" id="panel-experiments" role="tabpanel" aria-labelledby="tab-experiments" tabindex="0">
+        <section
+          class="tab-panel"
+          id="panel-experiments"
+          role="tabpanel"
+          aria-labelledby="tab-experiments"
+          tabindex="0"
+        >
           <ul>
             <li>
               <a href="./experiment1/index.html"
@@ -85,9 +136,7 @@
               >
             </li>
             <li>
-              <a href="./experiment2/index.html"
-                >Living Impressions</a
-              >
+              <a href="./experiment2/index.html">Living Impressions</a>
             </li>
             <li>
               <a href="./experiment3/index.html"
@@ -95,9 +144,7 @@
               >
             </li>
             <li>
-              <a href="./experiment4-a/index.html"
-                >Isometric Game of Life</a
-              >
+              <a href="./experiment4-a/index.html">Isometric Game of Life</a>
             </li>
             <li>
               <a href="./experiment4-b/index.html"
@@ -105,26 +152,39 @@
               </a>
             </li>
             <li>
-              <a href="./experiment4-c/index.html"
-                >Infinite Platformer
-              </a>
+              <a href="./experiment4-c/index.html">Infinite Platformer </a>
             </li>
             <li>
-              <a href="./experiment5/index.html"
-                >Evolutionary Impressions
-              </a>
+              <a href="./experiment5/index.html">Evolutionary Impressions </a>
             </li>
             <li>
-              <a href="./experiment6/index.html"
-                >Draw a Perfect Ellipse</a
-              >
+              <a href="./experiment6/index.html">Draw a Perfect Ellipse</a>
             </li>
           </ul>
         </section>
-        <section class="tab-panel" id="panel-games" role="tabpanel" aria-labelledby="tab-games" tabindex="0" hidden>
+        <section
+          class="tab-panel"
+          id="panel-games"
+          role="tabpanel"
+          aria-labelledby="tab-games"
+          tabindex="0"
+          hidden
+        >
           <ul>
             <li><a href="./final/index.html">Fish Fishing Fish</a></li>
           </ul>
+        </section>
+        <section
+          class="tab-panel"
+          id="panel-photos"
+          role="tabpanel"
+          aria-labelledby="tab-photos"
+          tabindex="0"
+          hidden
+        >
+          <p>
+            Photos
+          </p>
         </section>
       </section>
       <nav id="links">

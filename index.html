@@ -20,18 +20,53 @@
     <main id="content">
       <h1>Portfolio of Sunny Han</h1>
       <section class="two-column">
-        <div class="minor-section">
-          <!-- Note that all filenames use lowercase and no spaces -->
-          <div class="profile-picture">
+        <header class="profile-header minor-section">
+          <div class="profile-banner" aria-hidden="true"></div>
+
+          <div class="profile-avatar profile-picture">
             <img class="profile-pic" src="./img/header.jpeg" alt="Sunny's profile photo" />
           </div>
 
-          <h2>About Me</h2>
-          <p>
-            Hi I'm Sunny. I'm a computer science + game design major from UC Santa Cruz. I love hiking in the Bay Area, nature documentaries, and creating digital art. This site contains interactive experiments I've created.
-          </p>
-        </div>
-        <div class="minor-section">
+          <div class="profile-body">
+            <div class="profile-actions">
+              <a class="btn btn-primary" href="mailto:sunnyhan724@gmail.com">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 3a1 1 0 0 1 1 1v7h7a1 1 0 1 1 0 2h-7v7a1 1 0 1 1-2 0v-7H4a1 1 0 1 1 0-2h7V4a1 1 0 0 1 1-1Z"/>
+                </svg>
+                Contact Me
+              </a>
+              <button class="btn btn-icon" type="button" aria-label="More options" popovertarget="profile-options">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M2 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm16 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+                </svg>
+              </button>
+              <div id="profile-options" popover>
+                <ul>
+                  <li><a href="https://github.com/6YuQing6" target="_blank" rel="noopener noreferrer">View GitHub profile</a></li>
+                  <li><a href="#projects">Browse projects</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="profile-identity">
+              <h1 class="profile-name">Sunny Han</h1>
+              <div class="profile-handle">
+                <a href="https://github.com/6YuQing6" target="_blank" rel="noopener noreferrer">@6YuQing6</a>
+              </div>
+            </div>
+
+            <div class="profile-stats">
+              <a href="#projects"><strong>9</strong> <span>projects</span></a>
+              <a href="#projects"><strong>8</strong> <span>experiments</span></a>
+              <div><strong>1</strong> <span>final game</span></div>
+            </div>
+
+            <p class="profile-bio">
+              Hi I'm Sunny. I'm a computer science + game design major from UC Santa Cruz. I love hiking in the Bay Area, nature documentaries, and creating digital art. This site contains interactive experiments I've created.
+            </p>
+          </div>
+        </header>
+        <div class="minor-section" id="projects">
           <h2>Links to Experiments</h2>
           <ul>
             <li>

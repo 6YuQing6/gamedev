@@ -155,4 +155,5 @@
   font-size: 15px;
   line-height: 20px;
   overflow-wrap: anywhere;
+  white-space: pre-line;
 }

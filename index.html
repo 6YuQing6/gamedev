@@ -61,12 +61,23 @@
               <div><strong>1</strong> <span>final game</span></div>
             </div> -->
 
-            <p class="profile-bio" id="bio">
-            </p>
+            <p class="profile-bio" >Computer science: Game design (UCSC). Aspiring software developer, game jam enthusiast, digital art hobbyist.
+
+            "Change is freedom, change is life" - Ursula K. Le Guin </p>
           </div>
         </header>
-        <div class="minor-section" id="projects">
-          <h2>Links to Experiments</h2>
+        <div class="tabs-sticky" id="projects">
+          <div class="tabs" role="tablist" aria-label="Portfolio projects">
+            <button class="tab" id="tab-experiments" role="tab" type="button" data-tab="experiments" aria-selected="true" aria-controls="panel-experiments" tabindex="0">
+              <span class="tab-label">Experiments</span>
+            </button>
+            <button class="tab" id="tab-games" role="tab" type="button" data-tab="games" aria-selected="false" aria-controls="panel-games" tabindex="-1">
+              <span class="tab-label">Games</span>
+            </button>
+          </div>
+        </div>
+
+        <section class="tab-panel" id="panel-experiments" role="tabpanel" aria-labelledby="tab-experiments" tabindex="0">
           <ul>
             <li>
               <a href="./experiment1/index.html"
@@ -108,9 +119,13 @@
                 >Draw a Perfect Ellipse</a
               >
             </li>
+          </ul>
+        </section>
+        <section class="tab-panel" id="panel-games" role="tabpanel" aria-labelledby="tab-games" tabindex="0" hidden>
+          <ul>
             <li><a href="./final/index.html">Fish Fishing Fish</a></li>
           </ul>
-        </div>
+        </section>
       </section>
       <nav id="links">
         <!-- Put links to experiments here. -->

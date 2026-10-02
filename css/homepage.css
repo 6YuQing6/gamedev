@@ -34,9 +34,7 @@
 }
 
 .profile-avatar {
-  position: absolute;
-  top: 104px;
-  left: 10px;
+  flex: 0 0 94px;
   width: 94px;
   height: 94px;
   border: 2px solid var(--background);
@@ -54,7 +52,15 @@
 }
 
 .profile-body {
-  /* The avatar extends 48px below the banner; leave another 12px of space. */
-  padding: 60px 16px 8px;
-  overflow: hidden;
+  padding: 12px 16px 8px;
+}
+
+.profile-toolbar {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  /* Keep the avatar overlapping the banner while both items share one row. */
+  margin-top: -60px;
+  margin-bottom: 12px;
 }

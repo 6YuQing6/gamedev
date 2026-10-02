@@ -54,6 +54,7 @@
 }
 
 .profile-body {
-  padding: 12px 16px 8px;
+  /* The avatar extends 48px below the banner; leave another 12px of space. */
+  padding: 60px 16px 8px;
   overflow: hidden;
 }

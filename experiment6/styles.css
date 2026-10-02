@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "LowerPixel"; /* Define a name for the font */
+  src: url("lower-pixel.regular.otf") format("opentype"); /* Path to your .otf file */
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #0f0f13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Playpen Sans", "LowerPixel", "Pixelify Sans", sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+#canvas-wrap {
+  position: relative;
+}
+canvas {
+  display: block;
+  cursor: crosshair;
+  position: fixed;
+  top: 0;
+  left: 0;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+.project-nav {
+  position: fixed;
+  z-index: 1;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.project-nav a {
+  color: #fff;
+  background: rgba(15, 15, 19, 0.85);
+  border: 1px solid #555577;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  font: 14px sans-serif;
+  text-decoration: none;
+  pointer-events: auto;
+}
+.project-nav a:hover,
+.project-nav a:focus-visible {
+  background: #29293a;
+  outline: 2px solid #00ff88;
+  outline-offset: 2px;
+}

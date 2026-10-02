@@ -3,11 +3,11 @@
   flex-direction: row;
 }
 
-.two-column > *:nth-child(1) {
+.two-column>*:nth-child(1) {
   flex: 3;
 }
 
-.two-column > *:nth-child(2) {
+.two-column>*:nth-child(2) {
   flex: 2;
 }
 
@@ -54,7 +54,105 @@
 }
 
 .profile-body {
-  /* The avatar extends 48px below the banner; leave another 12px of space. */
-  padding: 60px 16px 8px;
+  padding: 12px 16px 8px;
   overflow: hidden;
+}
+
+
+/* ---------- Actions ---------- */
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding-left: 90px;
+  padding-bottom: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  gap: 5px;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13.1px;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.btn-icon {
+  width: 33px;
+  height: 33px;
+  background: var(--background-button);
+  color: var(--text-secondary);
+}
+
+
+/* ---------- Identity ---------- */
+.profile-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 2px 0 8px;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 24.3px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.profile-handle {
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+/* ---------- Stats ---------- */
+.profile-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.profile-stats a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-stats a:hover span {
+  text-decoration: underline;
+}
+
+.profile-stats strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-stats span {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ---------- Bio ---------- */
+.profile-bio {
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
 }

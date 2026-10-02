@@ -1,1 +1,2 @@
 - [Portfolio navigation](portfolio-navigation.md) — Use matching back buttons across project pages; the user dislikes boxed, bulleted Home links.
+- [GitHub authentication](github-authentication.md) — Connector authorization is separate from shell Git credentials; never assume connecting GitHub enables CLI pushes.

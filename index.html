@@ -6,6 +6,11 @@
 
     <!-- Use UTF character set, a good idea with any webpage -->
     <meta charset="UTF-8" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    
     <!-- Set viewport so page remains consistently scaled w narrow devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Include a sitewide CSS file for consistent styling across the site -->
@@ -61,7 +66,7 @@
               <div><strong>2</strong> <span>games</span></div>
             </div>
 
-            <p class="profile-bio" >🌱 Computer science game design (UCSC). Aspiring developer, game jam enthusiast, digital art hobbyist. Welcome to my portfolio! </p>
+            <p class="profile-bio" >🌱 Computer science game design (UCSC). Aspiring developer, game jam enthusiast, digital art hobbyist. Welcome to my personal site! </p>
           </div>
         </header>
         <div class="tabs-sticky" id="projects">
@@ -79,59 +84,125 @@
         </div>
 
         <section class="tab-panel" id="panel-experiments" role="tabpanel" aria-labelledby="tab-experiments" tabindex="0">
-          <ul>
-            <li>
-              <a href="./experiment1/index.html"
-                >Two Sentence Horror Generator</a
-              >
-            </li>
-            <li>
-              <a href="./experiment2/index.html"
-                >Living Impressions</a
-              >
-            </li>
-            <!-- <li>
-              <a href="./experiment3/index.html"
-                >Procedural Dungeon and Overworld</a
-              >
-            </li> -->
-            <li>
-              <a href="./experiment4-a/index.html"
-                >Isometric Game of Life</a
-              >
-            </li>
-            <li>
-              <a href="./experiment4-b/index.html"
-                >Game of Life Obstacle Course
-              </a>
-            </li>
-            <li>
-              <a href="./experiment4-c/index.html"
-                >Infinite Platformer
-              </a>
-            </li>
-            <!-- <li>
-              <a href="./experiment5/index.html"
-                >Evolutionary Impressions
-              </a>
-            </li> -->
-            <li>
-              <a href="./final/index.html">Fish Fishing Fish
-              </a>
-            </li>
-            <li>
-              <a href="./experiment6/index.html"
-                >Draw a Perfect Ellipse</a
-              >
-            </li>
-            <li>
-              <a href="https://6yuqing6.github.io/sticker-pad/" target="_blank" rel="noopener noreferrer">
-                Sticky Pad
-              </a>
-            </li>
-          </ul>
+           <article class="post" onclick="window.location.href='./experiment1/index.html'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Two Sentence Horror Generator
+                  </h2>
+                </header>
+                <!-- <p class="post-description">
+                  A generator that creates two-sentence horror stories using a Markov chain model trained on a dataset of horror stories.
+                </p> -->
+              </div>
+            </article>
+            <article class="post" onclick="window.location.href='./experiment2/index.html'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Living Impressions
+                  </h2>
+                </header>
+              </div>
+            </article>
+            <article class="post" onclick="window.location.href='./experiment4-a/index.html'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Isometric Game of Life
+                  </h2>
+                </header>
+              </div>
+            </article>
+            <article class="post" onclick="window.location.href='./experiment4-b/index.html'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Game of Life Obstacle Course
+                  </h2>
+                </header>
+              </div>
+            </article>
+            <article class="post" onclick="window.location.href='./experiment4-c/index.html'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Infinite Platformer
+                  </h2>
+                </header>
+              </div>
+            </article>
+            <article class="post" onclick="window.location.href='./final/index.html'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Fish Fishing Fish
+                  </h2>
+                </header>
+              </div>
+            </article>
+            <article class="post" onclick="window.location.href='./experiment6/index.html'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Draw a Perfect Ellipse
+                  </h2>
+                </header>
+              </div>
+            </article>
+            <article class="post" onclick="window.location.href='https://6yuqing6.github.io/sticker-pad/'">
+              <div class="post-main">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    Sticky Pad
+                  </h2>
+                </header>
+              </div>
+            </article>
         </section>
         <section class="tab-panel" id="panel-games" role="tabpanel" aria-labelledby="tab-games" tabindex="0" hidden>
+          <div class="media-grid">
+            <article class="media">
+              <img class="media-img" src="./img/cute-grey-kitten.jpg" alt="Game screenshot" />
+              <div class="media-main">
+                <header class="media-header">
+                  <h2 class="media-title">
+                    Game Title
+                  </h2>
+                </header>
+                <p class="media-description">
+                  A brief description of the game goes here.
+                </p>
+              </div>
+            </article>
+            <article class="media">
+              <img class="media-img" src="./img/cute-grey-kitten.jpg" alt="Game screenshot" />
+              <div class="media-main">
+                <header class="media-header">
+                  <h2 class="media-title">
+                    Game Title
+                  </h2>
+                </header>
+                <p class="media-description">
+                  A brief description of the game goes here.
+                </p>
+              </div>
+            </article>
+            <article class="media">
+              <img class="media-img" src="./img/cute-grey-kitten.jpg" alt="Game screenshot" />
+              <div class="media-main">
+                <header class="media-header">
+                  <h2 class="media-title">
+                    Game Title
+                  </h2>
+                </header>
+                <p class="media-description">
+                  A brief description of the game goes here.
+                </p>
+              </div>
+            </article>
+          </div>
+         
           <ul>
             <li>
               <a href="https://6yuqing6.github.io/Frog-Game/" target="_blank" rel="noopener noreferrer">It's Raining Frogs</a>

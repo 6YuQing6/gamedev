@@ -8,8 +8,10 @@
   --background-button: #eff2f6;
   --accent: #1da1f2;
   --border: #dce2ea;
+  --post-hover: rgba(0, 0, 0, 0.03);
 
-  --font: InterVariable, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  --font:
+    "InterVariable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Liberation Sans", Helvetica, Arial, sans-serif;
 }
 
@@ -54,7 +56,7 @@ body {
   height: auto;
   max-height: auto;
   padding: 10px;
-  font-family: sans-serif;
+  font-family: var(--font);
 }
 
 .minor-section {

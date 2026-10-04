@@ -1,18 +1,7 @@
 const canvas = document.getElementById("c");
 const ctx = canvas.getContext("2d");
 const historyEl = document.getElementById("history");
-// fix bluriness
-// https://medium.com/wdstack/fixing-html5-2d-canvas-blur-8ebe27db07da
-const dpi = window.devicePixelRatio || 1;
-canvas.style.width = window.innerWidth + "px";
-canvas.style.height = window.innerHeight + "px";
-canvas.width = window.innerWidth * dpi;
-canvas.height = window.innerHeight * dpi;
-ctx.scale(dpi, dpi);
-const W = window.innerWidth,
-  H = window.innerHeight;
-const cx = W / 2,
-  cy = H / 2;
+let W = 0, H = 0, cx = 0, cy = 0;
 
 let drawing = false;
 let path = [];
@@ -28,6 +17,10 @@ let history = [];
 function randEllipse() {
   A = W * 0.18 + Math.random() * (W * 0.05);
   B = H * 0.18 + Math.random() * (H * 0.05);
+  // Keep the rotated guide inside the canvas even on narrow screens.
+  const maxRadius = Math.max(1, Math.min(W, H) / 2 - 24);
+  A = Math.min(A, maxRadius);
+  B = Math.min(B, maxRadius);
   if (B > A) [A, B] = [B, A]; // ensure A >= B
   angle = Math.random() * Math.PI; // rotation 0–180°
 }
@@ -331,5 +324,27 @@ canvas.addEventListener("touchstart", onDown, { passive: false });
 canvas.addEventListener("touchmove", onMove, { passive: false });
 canvas.addEventListener("touchend", onUp, { passive: false });
 
-randEllipse();
-render();
+function resizeCanvas() {
+  const bounds = canvas.getBoundingClientRect();
+  const dpi = window.devicePixelRatio || 1;
+  const pixelWidth = Math.round(bounds.width * dpi);
+  const pixelHeight = Math.round(bounds.height * dpi);
+  if (
+    !bounds.width || !bounds.height ||
+    (W === bounds.width && H === bounds.height &&
+      canvas.width === pixelWidth && canvas.height === pixelHeight)
+  ) return;
+
+  W = bounds.width;
+  H = bounds.height;
+  cx = W / 2;
+  cy = H / 2;
+  canvas.width = pixelWidth;
+  canvas.height = pixelHeight;
+  ctx.setTransform(dpi, 0, 0, dpi, 0, 0);
+  // A resized drawing area starts a new round, but retains the session's best score.
+  reset();
+}
+
+new ResizeObserver(resizeCanvas).observe(canvas.parentElement);
+resizeCanvas();

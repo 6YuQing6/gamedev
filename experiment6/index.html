@@ -4,23 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Experiment 6 - Draw a Perfect Ellipse</title>
+<link href="../css/site.css" rel="stylesheet"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
-<link href="styles.css" rel="stylesheet"/>
-<link href="../css/navigation.css" rel="stylesheet"/>
+<link href="styles.css?v=experiment-layout" rel="stylesheet"/>
 </head>
-<body>
+<body class="with-project-nav experiment-page">
 <nav class="project-nav" aria-label="Project links">
   <a href="../index.html">← Back to portfolio</a>
   <a href="https://github.com/6YuQing6/perfectellipse" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
 </nav>
-<div id="canvas-wrap">
-  <canvas id="c"></canvas>
-  <div id="history"></div>
-</div>
-<script src="perfectellipse.js"></script>
+<main id="content">
+  <section>
+    <h1>Experiment 6 - Draw a Perfect Ellipse</h1>
+    <div class="minor-section" id="canvas-container">
+      <div id="canvas-wrap">
+        <canvas id="c" aria-label="Draw an ellipse through the four white guide points"></canvas>
+        <div id="history"></div>
+      </div>
+    </div>
+    <div class="minor-section">
+      <h2>Description</h2>
+      <p>
+        Draw an ellipse in one continuous stroke using the four white guide points.
+        Your score measures how closely your drawing follows the target ellipse.
+        Click or tap the canvas after finishing to try again.
+      </p>
+    </div>
+    <div class="minor-section">
+      <h2>Technical</h2>
+      <p>
+        The game uses the HTML Canvas 2D API to draw a randomly rotated ellipse
+        and compare your stroke with its outline. Your best score is tracked
+        for the current session.
+      </p>
+    </div>
+  </section>
+</main>
+<script src="perfectellipse.js?v=contained-canvas"></script>
 </body>
 </html>

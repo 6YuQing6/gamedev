@@ -4,31 +4,17 @@
   font-weight: normal;
   font-style: normal;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background: #0f0f13;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  font-family: "Playpen Sans", "LowerPixel", "Pixelify Sans", sans-serif;
-  color: #fff;
-  overflow: hidden;
-}
 #canvas-wrap {
   position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #0f0f13;
 }
-canvas {
+#c {
   display: block;
   cursor: crosshair;
-  position: fixed;
-  top: 0;
-  left: 0;
   image-rendering: pixelated;
   touch-action: none;
 }

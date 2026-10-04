@@ -305,11 +305,11 @@
 .media {
   position: relative; /* required: keeps the overlay inside the card */
 }
-
-.media-link::after {
+/* click overlay: covers the whole card */
+.media-link::before {
   content: "";
   position: absolute;
-  inset: 0; /* covers the entire card */
+  inset: 0;
 }
 
 .media-img {

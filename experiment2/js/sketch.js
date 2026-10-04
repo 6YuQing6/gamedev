@@ -29,7 +29,7 @@ let ROOT_COLOR = "rgb(158,146,126)"; // #9e927e
 const LEAF_COLOR_DARK_ID = "#leaf-dark";
 const LEAF_COLOR_LIGHT_ID = "#leaf-light";
 const ROOT_COLOR_ID = "#root";
-const BACKGROUND_COLOR = "rgba(196, 214, 231, 1)"; // #cdd3d9
+const BACKGROUND_COLOR = "rgb(223, 235, 244)"; // #cdd3d9
 const backgroundShadowColor = "rgba(84, 84, 134, 0.8)";
 
 // 239	232	90
@@ -126,7 +126,7 @@ function growVines(numRoots, originX = 0, originY = 0) {
       originX,
       originY + map(noise(i), 0, 1, -Y_OFFSET, Y_OFFSET),
       length,
-      angle
+      angle,
     );
     roots.push(r);
   }
@@ -172,7 +172,7 @@ class Vine {
       branchEvery = BRANCH_STEP, // branches recursively every x steps
       leafFrequency = LEAF_FREQUENCY,
       leafSize = LEAF_SIZE,
-    } = {}
+    } = {},
   ) {
     // points configuration
     this.x1 = x1;
@@ -238,7 +238,7 @@ class Vine {
             branchEvery: this.branchEvery,
             leafFrequency: this.leafFrequency * 0.5,
             leafSize: { min: this.leafSize.min, max: this.leafSize.max / 1.5 },
-          })
+          }),
         );
       }
     }
@@ -265,8 +265,8 @@ class Vine {
             pt.x + random(5),
             pt.y + random(5),
             random(this.leafSize.min, this.leafSize.max),
-            random(150, 180)
-          )
+            random(150, 180),
+          ),
         );
       }
     }
@@ -357,7 +357,7 @@ class Leaf {
     let baseColor = lerpColor(
       color(LEAF_COLOR_DARK),
       color(LEAF_COLOR_LIGHT),
-      xNorm
+      xNorm,
     );
 
     // make shadow color basecolor but darker
@@ -365,7 +365,7 @@ class Leaf {
       red(baseColor) * 0.2,
       green(baseColor) * 0.2,
       blue(baseColor) * 0.2,
-      100
+      100,
     );
 
     push();
@@ -418,7 +418,7 @@ class Leaf {
       red(baseColor) * 1.2,
       green(baseColor) * 1.2,
       blue(baseColor) * 1.2,
-      100
+      100,
     );
     stroke(veinColor);
     line(0, 0, 10, -47); // central vein

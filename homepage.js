@@ -5,7 +5,8 @@ function activateProjectTab(selectedTab) {
     const isSelected = tab === selectedTab;
     tab.setAttribute("aria-selected", String(isSelected));
     tab.tabIndex = isSelected ? 0 : -1;
-    document.getElementById(tab.getAttribute("aria-controls")).hidden = !isSelected;
+    document.getElementById(tab.getAttribute("aria-controls")).hidden =
+      !isSelected;
   }
 }
 
@@ -37,3 +38,31 @@ for (const tab of projectTabs) {
     projectTabs[nextIndex].focus();
   });
 }
+
+const statLinks = document.querySelectorAll(".profile-stats a");
+
+for (const link of statLinks) {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const panelId = link.getAttribute("href").slice(1); // "panel-games"
+    const tab = projectTabs.find(
+      (t) => t.getAttribute("aria-controls") === panelId,
+    );
+    if (!tab) return;
+
+    activateProjectTab(tab);
+    document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+function openTabFromHash() {
+  const panelId = location.hash.slice(1);
+  const tab = projectTabs.find(
+    (t) => t.getAttribute("aria-controls") === panelId,
+  );
+  if (tab) activateProjectTab(tab);
+}
+
+openTabFromHash();
+window.addEventListener("hashchange", openTabFromHash);

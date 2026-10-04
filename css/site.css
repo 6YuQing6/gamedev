@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 h1,
 h2 {
   margin: 0;

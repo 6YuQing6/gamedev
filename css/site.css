@@ -110,6 +110,13 @@ canvas {
   margin-bottom: 1rem;
 }
 
+.experiment-page .embedded-site {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .fullscreen-box {
   display: flex;
   justify-content: flex-end;

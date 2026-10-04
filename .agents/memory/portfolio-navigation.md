@@ -17,6 +17,6 @@ Homepage links should show only the project name, without an experiment label or
 
 Global p5 click callbacks receive clicks outside the canvas too. Returning `false` cancels the clicked link's normal navigation; a visible, clickable back button can therefore fail even when its URL and stacking order are correct.
 
-**Why:** The isometric experiments cancelled back-button navigation through their global sketch click handlers, not through an overlay or a bad link.
+**Why:** The isometric experiments cancelled ordinary back-button navigation through their global sketch click handlers. A separate fullscreen stacking issue also put the canvas above the navigation bar.
 
-**How to apply:** Restrict sketch click handling to its own canvas before cancelling default browser behavior. Keep link and form-control clicks outside the sketch handler.
+**How to apply:** Restrict sketch click handling to its own canvas before cancelling default browser behavior. Keep link and form-control clicks outside the sketch handler, and verify real browser navigation both normally and in fullscreen; the fixed navigation must stay above the fullscreen canvas.

@@ -302,6 +302,15 @@
   cursor: pointer;
   padding-bottom: 4px;
 }
+.media {
+  position: relative; /* required: keeps the overlay inside the card */
+}
+
+.media-link::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* covers the entire card */
+}
 
 .media-img {
   width: 100%;
@@ -323,6 +332,23 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--text);
+}
+
+.media-title:hover {
+  text-decoration: underline;
+}
+
+.media-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.media-link[href^="http"]::after {
+  content: "\2197";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 6px;
 }
 
 .media-description {

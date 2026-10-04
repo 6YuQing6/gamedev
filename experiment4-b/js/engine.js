@@ -107,7 +107,12 @@ function rebuildWorld(key) {
   tile_rows = Math.ceil(height / (tile_height_step_main * 2));
 }
 
-function mouseClicked() {
+function mouseClicked(event) {
+  // Only canvas clicks belong to the sketch; allow links and controls to work normally.
+  if (!event || !event.target.matches("#canvas-container canvas")) {
+    return;
+  }
+
   let world_pos = screenToWorld(
     [0 - mouseX, mouseY],
     [camera_offset.x, camera_offset.y]

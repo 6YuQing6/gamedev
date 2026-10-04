@@ -9,11 +9,11 @@ Use the same fixed back-to-portfolio button style across experiment pages and th
 
 **How to apply:** Keep new portfolio project pages consistent with this navigation style.
 
-Homepage links should show only the project name, without an experiment label or number.
+Homepage links, experiment page headings, and browser-tab titles should show only the project name, without an experiment label or number.
 
 **Why:** The user wants to remove links without disrupting numbering.
 
-**How to apply:** Use unnumbered project names when adding or updating homepage links.
+**How to apply:** Use unnumbered project names when adding or updating homepage links, experiment headings, and HTML titles.
 
 Global p5 click callbacks receive clicks outside the canvas too. Returning `false` cancels the clicked link's normal navigation; a visible, clickable back button can therefore fail even when its URL and stacking order are correct.
 

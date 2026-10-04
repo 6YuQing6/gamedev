@@ -93,6 +93,23 @@ canvas {
   height: 100%;
 }
 
+/* Shared experiment layout; do not apply it to the homepage or standalone games. */
+.experiment-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.experiment-page #canvas-container {
+  width: 100%;
+  height: 600px;
+}
+
+.experiment-page--auto-canvas #canvas-container {
+  height: auto;
+  margin-bottom: 1rem;
+}
+
 .fullscreen-box {
   display: flex;
   justify-content: flex-end;

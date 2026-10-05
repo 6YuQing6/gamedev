@@ -540,6 +540,7 @@ class Fish {
         this.pixelbuffer.square(floor(x), floor(y), floor(this.level));
       }
     }
+    imgbuffer.remove();
   }
 
   updateColor(closest, pattern, texture, x, y) {

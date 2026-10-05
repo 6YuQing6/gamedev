@@ -3,11 +3,11 @@ name: Portfolio navigation
 description: User's preferred homepage navigation format across portfolio projects.
 ---
 
-Use the same fixed back-to-portfolio button style across experiment pages and the final project, with shared navigation CSS rather than page-specific copies. Do not use a boxed, bulleted Home-link list.
+Use Experiment 1 as the navigation style reference for all experiment pages: a fixed arrow-only back link with the project title beside it, using shared navigation CSS. Do not use a boxed, bulleted Home-link list.
 
-**Why:** The user explicitly disliked the old Home-list format and requested the same button format as Experiment 6.
+**Why:** The user disliked the old Home-list format and subsequently requested that all experiment navigation match Experiment 1.
 
-**How to apply:** Keep new portfolio project pages consistent with this navigation style.
+**How to apply:** Keep experiment pages consistent with Experiment 1 and give the arrow link an accessible back-to-portfolio label.
 
 Homepage links, experiment page headings, and browser-tab titles should show only the project name, without an experiment label or number.
 

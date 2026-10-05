@@ -3,10 +3,10 @@
 
 // Use the game's generator without loading its fishing or aquarium scenes.
 const fishParams = {
-  minWidth: 140,
-  maxWidth: 280,
-  minHeight: 90,
-  maxHeight: 280,
+  minWidth: 300,
+  maxWidth: 1000,
+  minHeight: 200,
+  maxHeight: 800,
 };
 
 let generatedFish;
@@ -19,9 +19,16 @@ function canvasSize() {
   const style = getComputedStyle(container);
   const availableWidth = Math.max(
     1,
-    Math.floor(container.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight)),
+    Math.floor(
+      container.clientWidth -
+        parseFloat(style.paddingLeft) -
+        parseFloat(style.paddingRight),
+    ),
   );
-  return { width: availableWidth, height: Math.round(Math.min(440, Math.max(260, availableWidth * 0.6))) };
+  return {
+    width: availableWidth,
+    height: Math.round(Math.min(440, Math.max(260, availableWidth * 0.6))),
+  };
 }
 
 function setup() {
@@ -80,7 +87,8 @@ function visibleBounds(buffer) {
       }
     }
   }
-  if (right < left) throw new Error("The fish generator produced an empty image.");
+  if (right < left)
+    throw new Error("The fish generator produced an empty image.");
   return { left, top, width: right - left + 1, height: bottom - top + 1 };
 }
 

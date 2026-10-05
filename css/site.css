@@ -102,6 +102,30 @@ canvas {
   align-items: center;
 }
 
+.experiment-page button {
+  color: var(--text);
+  background-color: var(--background-muted);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+.experiment-page button:hover {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background-color: var(--post-hover);
+}
+
+.experiment-page input {
+  border: none;
+  outline: none;
+  background-color: var(--border);
+  border-radius: 0;
+}
+
 .experiment-page #canvas-container {
   width: 100%;
   height: 600px;

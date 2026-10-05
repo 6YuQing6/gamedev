@@ -9,6 +9,12 @@ Use Experiment 1 as the navigation style reference for all experiment pages: a f
 
 **How to apply:** Keep experiment pages consistent with Experiment 1 and give the arrow link an accessible back-to-portfolio label.
 
+Preserve the user's navigation CSS changes when matching experiment navigation; do not restore an earlier navigation style.
+
+**Why:** The user explicitly emphasized that they made changes to the navigation CSS and do not want those reverted.
+
+**How to apply:** Treat the user's current navigation CSS as the source of truth and limit matching work to the necessary page markup.
+
 Homepage links, experiment page headings, and browser-tab titles should show only the project name, without an experiment label or number.
 
 **Why:** The user wants to remove links without disrupting numbering.

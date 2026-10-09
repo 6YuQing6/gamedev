@@ -343,7 +343,8 @@
   text-decoration: none;
 }
 
-.media-link[href^="http"]::after {
+.media-link[href^="http"]::after,
+.website-media-description-links a[href^="http"]::after {
   content: "\2197";
   display: inline-block;
   width: 0.8em;

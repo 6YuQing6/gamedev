@@ -9,6 +9,8 @@
   --accent: #1da1f2;
   --border: #dce2ea;
   --post-hover: rgba(0, 0, 0, 0.03);
+  --gallery-button-background: rgba(15, 20, 25, 0.9);
+  --gallery-button-hover-background: rgba(15, 20, 25, 0.75);
 
   --font:
     "InterVariable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",

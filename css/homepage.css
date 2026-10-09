@@ -468,9 +468,12 @@
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(15, 20, 25, 0.75);
+  background: var(--gallery-button-background);
   color: white;
   cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, background-color 180ms ease;
 }
 
 .website-media-gallery-button svg {
@@ -497,12 +500,24 @@
   pointer-events: none;
 }
 
+.website-media-gallery:hover .website-media-gallery-button:not(:disabled),
+.website-media-gallery:has(:focus-visible) .website-media-gallery-button:not(:disabled) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .website-media-gallery-button:hover {
-  background: rgba(15, 20, 25, 0.9);
+  background: var(--gallery-button-hover-background);
 }
 
 .website-media-gallery-button:focus-visible,
 .website-media-image-wrapper:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .website-media-gallery-button {
+    transition: none;
+  }
 }

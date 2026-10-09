@@ -402,7 +402,8 @@
   text-decoration: none;
 }
 
-.website-media-link:hover {
+.website-media-link:hover,
+.website-media-description-links a:hover {
   text-decoration: underline;
 }
 

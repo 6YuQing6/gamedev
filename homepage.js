@@ -6,6 +6,7 @@ let contactResetTimer;
 let copyingEmail = false;
 
 contactEmail.value = contactButton.dataset.email;
+contactButton.setAttribute("title", `${contactButton.dataset.email} — Click to copy`);
 
 function resetContactButton() {
   delete contactButton.dataset.copied;

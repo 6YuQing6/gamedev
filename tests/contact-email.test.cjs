@@ -49,6 +49,15 @@ function setup(clipboard) {
   };
 }
 
+test("hover tooltip previews the configured email without copying or opening a link", () => {
+  let writes = 0;
+  const ui = setup({ writeText: async () => { writes++; } });
+  assert.equal(ui.button.attributes.title, `${ui.button.dataset.email} — Click to copy`);
+  assert.equal(writes, 0);
+  assert.equal(ui.button.dataset.copied, undefined);
+  assert.equal(ui.fallback.hidden, true);
+});
+
 test("copies the exact configured email and resets success after two seconds", async () => {
   let copied;
   const ui = setup({ writeText: async (text) => { copied = text; } });
@@ -66,6 +75,7 @@ test("copies the exact configured email and resets success after two seconds", a
   assert.equal(ui.button.dataset.copied, undefined);
   assert.equal(ui.button.attributes["aria-label"], "Contact Me: copy email address");
   assert.equal(ui.status.textContent, "");
+  assert.equal(ui.button.attributes.title, `${copied} — Click to copy`);
 });
 
 test("unavailable or rejected clipboard access reveals selected email without false success", async () => {
@@ -82,6 +92,7 @@ test("unavailable or rejected clipboard access reveals selected email without fa
     assert.match(ui.status.textContent, /Couldn’t copy automatically/);
     assert.equal(ui.timers.size, 0);
     assert.equal(ui.button.attributes["aria-busy"], undefined);
+    assert.equal(ui.button.attributes.title, `${ui.button.dataset.email} — Click to copy`);
   }
 });
 

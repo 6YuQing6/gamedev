@@ -16,7 +16,7 @@
     <!-- Include a sitewide CSS file for consistent styling across the site -->
     <link rel="stylesheet" type="text/css" href="css/site.css" />
     <!-- Experiment-specifc CSS file for any special styling of this particular page -->
-    <link rel="stylesheet" type="text/css" href="css/homepage.css?v=full-image-carousel" />
+    <link rel="stylesheet" type="text/css" href="css/homepage.css?v=centered-carousel-arrows" />
     <!-- Link to javascript file - DEFER waits until all elements are rendered -->
     <!-- <script type="text/javascript" src="./js/experiment.js"></script> -->
     <script type="text/javascript" src="./homepage.js?v=full-image-carousel" defer></script>
@@ -277,8 +277,12 @@
                   <img class="website-media-img" src="./img/twtimgs/twt2.jpeg" width="1434" height="1358" alt="Taste Without Trouble recipes page featuring cookies and apple pie" />
                   <img class="website-media-img" src="./img/twtimgs/twt3.jpeg" width="1442" height="1464" alt="Taste Without Trouble Hong-Kong Style Waffles recipe" />
                 </div>
-                <button class="website-media-gallery-button" type="button" data-direction="previous" aria-label="Previous screenshot" aria-controls="website-screenshots" disabled>‹</button>
-                <button class="website-media-gallery-button" type="button" data-direction="next" aria-label="Next screenshot" aria-controls="website-screenshots" disabled>›</button>
+                <button class="website-media-gallery-button" type="button" data-direction="previous" aria-label="Previous screenshot" aria-controls="website-screenshots" disabled>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 6 8.5 12l6 6" /></svg>
+                </button>
+                <button class="website-media-gallery-button" type="button" data-direction="next" aria-label="Next screenshot" aria-controls="website-screenshots" disabled>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9.5 6 6 6-6 6" /></svg>
+                </button>
               </div>
             </div>
           </article>

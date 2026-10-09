@@ -66,3 +66,41 @@ function openTabFromHash() {
 
 openTabFromHash();
 window.addEventListener("hashchange", openTabFromHash);
+
+for (const gallery of document.querySelectorAll(".website-media-gallery")) {
+  const track = gallery.querySelector(".website-media-image-wrapper");
+  const previous = gallery.querySelector('[data-direction="previous"]');
+  const next = gallery.querySelector('[data-direction="next"]');
+
+  function updateGalleryButtons() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    previous.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft >= maxScroll - 1;
+  }
+
+  function moveScreenshot(direction) {
+    const positions = Array.from(track.children, (image) => image.offsetLeft - track.firstElementChild.offsetLeft);
+    const target = direction > 0
+      ? positions.find((position) => position > track.scrollLeft + 2)
+      : positions.reverse().find((position) => position < track.scrollLeft - 2);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    track.scrollTo({
+      left: target ?? (direction > 0 ? track.scrollWidth : 0),
+      behavior: reducedMotion ? "instant" : "smooth",
+    });
+  }
+
+  previous.addEventListener("click", () => moveScreenshot(-1));
+  next.addEventListener("click", () => moveScreenshot(1));
+  track.addEventListener("scroll", updateGalleryButtons, { passive: true });
+  track.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    moveScreenshot(event.key === "ArrowRight" ? 1 : -1);
+  });
+  for (const image of track.querySelectorAll("img")) {
+    image.addEventListener("load", updateGalleryButtons);
+  }
+  new ResizeObserver(updateGalleryButtons).observe(track);
+  updateGalleryButtons();
+}

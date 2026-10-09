@@ -1,3 +1,4 @@
 - [Portfolio navigation](portfolio-navigation.md) — Use matching back buttons across project pages; the user dislikes boxed, bulleted Home links.
 - [GitHub authentication](github-authentication.md) — Connector authorization is separate from shell Git credentials; never assume connecting GitHub enables CLI pushes.
 - [p5 pixel bounds](p5-pixel-bounds.md) — Graphics can retain fractional dimensions; scan pixels using the actual integer canvas dimensions.
+- [Portfolio screenshots](portfolio-screenshots.md) — Show full website screenshots in a taller Twitter-style carousel, not a cropped attachment grid.

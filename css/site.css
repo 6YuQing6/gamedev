@@ -22,7 +22,7 @@
 }
 
 html {
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
 }
 
 h1,

@@ -16,10 +16,10 @@
     <!-- Include a sitewide CSS file for consistent styling across the site -->
     <link rel="stylesheet" type="text/css" href="css/site.css?v=hover-carousel-controls" />
     <!-- Experiment-specifc CSS file for any special styling of this particular page -->
-    <link rel="stylesheet" type="text/css" href="css/homepage.css?v=website-link-hover-underline" />
+    <link rel="stylesheet" type="text/css" href="css/homepage.css?v=copy-contact-email" />
     <!-- Link to javascript file - DEFER waits until all elements are rendered -->
     <!-- <script type="text/javascript" src="./js/experiment.js"></script> -->
-    <script type="text/javascript" src="./homepage.js?v=full-image-carousel" defer></script>
+    <script type="text/javascript" src="./homepage.js?v=copy-contact-email" defer></script>
   </head>
   <body>
     <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
@@ -36,12 +36,24 @@
 
           <div class="profile-body">
             <div class="profile-actions">
-              <a class="btn btn-primary" href="mailto:sunnyhan724@gmail.com">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 3a1 1 0 0 1 1 1v7h7a1 1 0 1 1 0 2h-7v7a1 1 0 1 1-2 0v-7H4a1 1 0 1 1 0-2h7V4a1 1 0 0 1 1-1Z"/>
-                </svg>
-                Contact Me
-              </a>
+              <div class="contact-action">
+                <button class="btn btn-primary contact-button" id="contact-button" type="button"
+                  data-email="sunnyhan724@gmail.com"
+                  aria-label="Contact Me: copy email address" aria-describedby="contact-hint"
+                  title="Copy my email address">
+                  <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <path class="contact-icon-plus" d="M12 4v16M4 12h16" />
+                    <path class="contact-icon-check" d="m5 12 4 4L19 6" />
+                  </svg>
+                  <span class="contact-label" aria-hidden="true">
+                    <span class="contact-label-default">Contact Me</span>
+                    <span class="contact-label-copied">Email copied</span>
+                  </span>
+                </button>
+                <span class="contact-hint" id="contact-hint">Copy email address</span>
+              </div>
               <!-- <button class="btn btn-icon" type="button" aria-label="More options" popovertarget="profile-options">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M2 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm16 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
@@ -53,6 +65,12 @@
                   <li><a href="#projects">Browse projects</a></li>
                 </ul>
               </div> -->
+            </div>
+            <p class="contact-status" id="contact-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            <div class="contact-fallback" id="contact-fallback" hidden>
+              <label for="contact-email">Couldn’t copy automatically. Select and copy my email:</label>
+              <input id="contact-email" type="text" readonly aria-label="Email address"
+                spellcheck="false" autocapitalize="off" />
             </div>
 
             <div class="profile-identity">

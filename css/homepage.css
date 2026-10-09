@@ -96,6 +96,104 @@
   color: var(--text-secondary);
 }
 
+.contact-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.contact-hint {
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.contact-label {
+  display: grid;
+}
+
+.contact-label > span {
+  grid-area: 1 / 1;
+}
+
+.contact-label-copied,
+.contact-button[data-copied="true"] .contact-label-default {
+  visibility: hidden;
+}
+
+.contact-button[data-copied="true"] .contact-label-copied {
+  visibility: visible;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+}
+
+.contact-icon path {
+  transform-origin: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.contact-icon-check {
+  opacity: 0;
+  transform: scale(0.5) rotate(-45deg);
+}
+
+.contact-button[data-copied="true"] .contact-icon-plus {
+  opacity: 0;
+  transform: scale(0.5) rotate(45deg);
+}
+
+.contact-button[data-copied="true"] .contact-icon-check {
+  opacity: 1;
+  transform: none;
+}
+
+.contact-button:focus-visible,
+.contact-fallback input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.contact-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.contact-fallback {
+  margin: 8px 0 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background-muted);
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.contact-fallback label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.contact-fallback input {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--background);
+  color: var(--text);
+  font: inherit;
+}
+
 /* ---------- Identity ---------- */
 .profile-identity {
   display: flex;
@@ -529,7 +627,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .website-media-gallery-button {
+  .website-media-gallery-button,
+  .contact-icon path {
     transition: none;
   }
 }

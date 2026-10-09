@@ -1,3 +1,49 @@
+const contactButton = document.getElementById("contact-button");
+const contactStatus = document.getElementById("contact-status");
+const contactFallback = document.getElementById("contact-fallback");
+const contactEmail = document.getElementById("contact-email");
+let contactResetTimer;
+let copyingEmail = false;
+
+contactEmail.value = contactButton.dataset.email;
+
+function resetContactButton() {
+  delete contactButton.dataset.copied;
+  contactButton.setAttribute("aria-label", "Contact Me: copy email address");
+  contactStatus.textContent = "";
+}
+
+contactButton.addEventListener("click", async () => {
+  if (copyingEmail) return;
+  copyingEmail = true;
+  clearTimeout(contactResetTimer);
+  resetContactButton();
+  contactFallback.hidden = true;
+  contactButton.setAttribute("aria-busy", "true");
+
+  try {
+    if (!navigator.clipboard?.writeText) {
+      throw new Error("Clipboard access is unavailable");
+    }
+    await navigator.clipboard.writeText(contactButton.dataset.email);
+    contactButton.dataset.copied = "true";
+    contactButton.setAttribute("aria-label", "Email copied");
+    contactStatus.textContent = "Email address copied to clipboard.";
+    contactResetTimer = setTimeout(resetContactButton, 2000);
+  } catch {
+    contactFallback.hidden = false;
+    contactStatus.textContent =
+      "Couldn’t copy automatically. Select and copy the email address below.";
+    contactEmail.focus();
+    contactEmail.select();
+  } finally {
+    copyingEmail = false;
+    contactButton.removeAttribute("aria-busy");
+  }
+});
+
+contactEmail.addEventListener("focus", () => contactEmail.select());
+
 const projectTabs = Array.from(document.querySelectorAll(".tabs [role='tab']"));
 
 function activateProjectTab(selectedTab) {

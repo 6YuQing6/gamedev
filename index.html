@@ -16,7 +16,7 @@
     <!-- Include a sitewide CSS file for consistent styling across the site -->
     <link rel="stylesheet" type="text/css" href="css/site.css?v=hover-carousel-controls" />
     <!-- Experiment-specifc CSS file for any special styling of this particular page -->
-    <link rel="stylesheet" type="text/css" href="css/homepage.css?v=hover-carousel-controls" />
+    <link rel="stylesheet" type="text/css" href="css/homepage.css?v=epieat-video-frame" />
     <!-- Link to javascript file - DEFER waits until all elements are rendered -->
     <!-- <script type="text/javascript" src="./js/experiment.js"></script> -->
     <script type="text/javascript" src="./homepage.js?v=full-image-carousel" defer></script>
@@ -354,7 +354,15 @@
               </header>
               <div class="website-media-gallery" role="group" aria-label="Taste Without Trouble website screenshots">
                 <div class="website-media-image-wrapper" id="website-screenshots" tabindex="0" aria-label="Website screenshots; scroll horizontally to see more">
-                  <iframe src="https://www.youtube.com/watch?v=sr-acOtDyRk" allowfullscreen></iframe>
+                  <div class="website-media-img website-media-video">
+                    <iframe src="https://www.youtube.com/embed/sr-acOtDyRk"
+                      title="EpiEat demo video"
+                      width="560" height="315"
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
                   <img class="website-media-img" src="./img/epieatimgs/epieat1.jpg"  alt="EpiEat " />
                   <img class="website-media-img" src="./img/epieatimgs/epieat2.jpg"  alt="EpiEat" />
                   <img class="website-media-img" src="./img/epieatimgs/epieat3.jpg"  alt="EpiEat" />

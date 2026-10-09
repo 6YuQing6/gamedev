@@ -371,7 +371,7 @@
   font-size: 15px;
   line-height: 20px;
   color: var(--text);
-  cursor: pointer;
+  cursor: default;
 }
 
 .website-media:hover {
@@ -399,12 +399,6 @@
   font-size: 15px;
   color: var(--text);
   text-decoration: none;
-}
-
-.website-media-link::before {
-  content: "";
-  position: absolute;
-  inset: 0;
 }
 
 .website-media-link:hover {

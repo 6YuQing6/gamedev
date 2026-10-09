@@ -3,3 +3,4 @@
 - [p5 pixel bounds](p5-pixel-bounds.md) — Graphics can retain fractional dimensions; scan pixels using the actual integer canvas dimensions.
 - [Portfolio screenshots](portfolio-screenshots.md) — Show full website screenshots in a taller Twitter-style carousel, not a cropped attachment grid.
 - [Portfolio contact](portfolio-contact.md) — Prefer copying the email over launching a mail app; use a plus-to-checkmark confirmation.
+- [Mobile homepage](portfolio-mobile-layout.md) — The user wants the mobile homepage edge-to-edge, without outer white side gutters.

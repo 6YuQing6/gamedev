@@ -5,10 +5,6 @@
     margin-inline: 0;
     padding-inline: 0;
   }
-
-  .media-grid {
-    padding-inline: 16px;
-  }
 }
 
 .two-column {
@@ -395,6 +391,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 4px;
+  padding-inline: 12px;
 }
 
 @media (min-width: 640px) {

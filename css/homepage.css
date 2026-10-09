@@ -5,6 +5,10 @@
     margin-inline: 0;
     padding-inline: 0;
   }
+
+  .media-grid {
+    padding-inline: 16px;
+  }
 }
 
 .two-column {
@@ -12,11 +16,11 @@
   flex-direction: row;
 }
 
-.two-column > *:nth-child(1) {
+.two-column>*:nth-child(1) {
   flex: 3;
 }
 
-.two-column > *:nth-child(2) {
+.two-column>*:nth-child(2) {
   flex: 2;
 }
 
@@ -122,7 +126,7 @@
   display: grid;
 }
 
-.contact-label > span {
+.contact-label>span {
   grid-area: 1 / 1;
 }
 
@@ -288,7 +292,8 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 10px 8px 0; /* estimated */
+  padding: 10px 8px 0;
+  /* estimated */
   border: 0;
   background: none;
   font-family: inherit;
@@ -316,7 +321,8 @@
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 3px; /* estimated */
+  height: 3px;
+  /* estimated */
   border-radius: 3px 3px 0 0;
   background: var(--accent);
 }
@@ -393,13 +399,15 @@
 
 @media (min-width: 640px) {
   .media-grid {
-    grid-template-columns: repeat(3, 1fr); /* medium: 3 columns */
+    grid-template-columns: repeat(3, 1fr);
+    /* medium: 3 columns */
   }
 }
 
 @media (min-width: 1024px) {
   .media-grid {
-    grid-template-columns: repeat(4, 1fr); /* large: 4 columns */
+    grid-template-columns: repeat(4, 1fr);
+    /* large: 4 columns */
   }
 }
 
@@ -409,9 +417,12 @@
   cursor: pointer;
   padding-bottom: 4px;
 }
+
 .media {
-  position: relative; /* required: keeps the overlay inside the card */
+  position: relative;
+  /* required: keeps the overlay inside the card */
 }
+
 /* click overlay: covers the whole card */
 .media-link::before {
   content: "";
@@ -619,8 +630,7 @@
 }
 
 .website-media-gallery:hover .website-media-gallery-button:not(:disabled),
-.website-media-gallery:has(:focus-visible)
-  .website-media-gallery-button:not(:disabled) {
+.website-media-gallery:has(:focus-visible) .website-media-gallery-button:not(:disabled) {
   opacity: 1;
   pointer-events: auto;
 }
@@ -636,6 +646,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .website-media-gallery-button,
   .contact-icon path {
     transition: none;
